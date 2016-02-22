@@ -1,7 +1,10 @@
 from django.utils.translation import ugettext_lazy as _
 from django.dispatch import receiver
 from django.db import models
-from itertools import izip_longest
+try:
+    from itertools import zip_longest
+except ImportError:
+    from itertools import izip_longest
 from datetime import datetime
 from pytz import timezone
 import pytz
